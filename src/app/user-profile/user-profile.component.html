@@ -1,0 +1,17 @@
+<section>
+  <div id="div1">
+    <img [src]="user.photo" [alt]="user.name" />
+
+    <p>Nom: {{ user.name }} <br>
+    Prénom: {{ user.firstName }}</p>
+
+    <p><label for="citation">Quelle est votre citation ? </label>
+    <input type="text" [(ngModel)]="user.quote" id="citation" /> <br>
+    Voici votre citation: {{ user.quote }}</p>
+
+    <div id="div2">
+        <button (click)="hiddenAge()">Afficher/Masquer votre âge</button> <br>
+        <p id="lastP">Age: {{user.age}}</p>
+    </div>
+  </div>
+</section>
