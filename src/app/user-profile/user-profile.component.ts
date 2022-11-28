@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  buttonAge: string = 'Cacher !';
+  hidden: boolean = true;
   user = {
     name : 'Doe',
     firstName : 'John',
@@ -20,15 +22,19 @@ export class UserProfileComponent implements OnInit {
       
   }
 
-  hiddenAge(): void {
-    console.log('Fonction hiddenAge');
-    let p = document.getElementById('lastP');
-    console.log(p?.hidden);
-    if(p?.hidden === false){
-      p.style.visibility = 'hidden';
-      console.log(p);
+  // hiddenAge(): void {
+  //   console.log('Fonction hiddenAge');
+  //   let p = document.getElementById('lastP');
+  //   console.log(p?.hidden);
+  //   if(p?.hidden === false){
+  //     p.style.visibility = 'hidden';
+  //     console.log(p);
+  //   }
+  
+    hideAge() {
+      return this.hidden === true
+        ? (this.buttonAge = 'Afficher !') && (this.hidden = false)
+        : (this.buttonAge = 'Cacher !') && (this.hidden = true);
     }
   }
 
-
-}

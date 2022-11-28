@@ -10,8 +10,8 @@
     Voici votre citation: {{ user.quote }}</p>
 
     <div id="div2">
-        <button (click)="hiddenAge()">Afficher/Masquer votre âge</button> <br>
-        <p id="lastP">Age: {{user.age}}</p>
+        <button (click)="hideAge()">{{ buttonAge }}</button> <br>
+        <span *ngIf="hidden">Age : {{ user.age }}</span>
     </div>
   </div>
 </section>
